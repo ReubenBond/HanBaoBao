@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="info_card_padding">6dp</dimen>
+    <dimen name="output_text_size">18sp</dimen>
+    <dimen name="info_card_vertical_padding_extra">0dp</dimen>
+    <dimen name="info_card_margin_top">0dp</dimen>
+    <dimen name="info_card_margin_left">-2dp</dimen>
+    <dimen name="info_card_margin_right">2dp</dimen>
+</resources>

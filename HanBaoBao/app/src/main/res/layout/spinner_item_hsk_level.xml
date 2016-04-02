@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:orientation="horizontal" android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+<TextView style="@style/Widget.AppCompat.TextView.SpinnerItem"
+    android:id="@+id/label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="Show all"/>
+</LinearLayout>

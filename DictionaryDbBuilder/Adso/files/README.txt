@@ -1,0 +1,1 @@
+adso.db can be retrieved from the wtanaka/adso github page.

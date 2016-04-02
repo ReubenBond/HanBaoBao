@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E146F656-EE73-4E98-82E6-8C2A2B2191D2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DictionaryDbBuilder</RootNamespace>
+    <AssemblyName>DictionaryDbBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.14.2\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Excel.Helper, Version=1.0.1.0, Culture=neutral, PublicKeyToken=ab40b1b8217243eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReaderHelper.1.0.3.0\lib\Excel.Helper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.1.0.0\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.101.0\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.101.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.101.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adso\AdsoTransImporter.cs" />
+    <Compile Include="CcCedict\CcCedictImporter.cs" />
+    <Compile Include="Models\Entry.cs" />
+    <Compile Include="ExampleSentences\TaetobaSentenceImporter.cs" />
+    <Compile Include="ExampleSentences\Tatoeba\TaetobaSentenceImporter.cs" />
+    <Compile Include="Hsk\HskHskCom\HskHskComWordListImporter.cs" />
+    <Compile Include="Hsk\PopupChinese\PopupChineseHskWordListImporter.cs" />
+    <Compile Include="Utilities\PartOfSpeechParser.cs" />
+    <Compile Include="NtiBuddhistDictionary\NtiBuddhistDictionaryImporter.cs" />
+    <Compile Include="StartDictDictionaries\StarDictDictionaries.cs" />
+    <Compile Include="Utilities\StartDict\DictDB.cs" />
+    <Compile Include="Utilities\StartDict\DictUtilExt.cs" />
+    <Compile Include="Utilities\GZip\Crc32.cs" />
+    <Compile Include="Utilities\GZip\DictZip.cs" />
+    <Compile Include="Utilities\GZip\GZip.cs" />
+    <Compile Include="Utilities\StartDict\HeteroIdxTable.cs" />
+    <Compile Include="Utilities\StartDict\Interfaces.cs" />
+    <Compile Include="Utilities\StartDict\StarDict.cs" />
+    <Compile Include="Utilities\StartDict\StarDictIdx.cs" />
+    <Compile Include="Utilities\StartDict\StarDictInfo.cs" />
+    <Compile Include="Utilities\PinyinUtil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Resource.cs" />
+    <Compile Include="Utilities\SQLiteUtil.cs" />
+    <Compile Include="Utilities\PathUtil.cs" />
+    <Compile Include="Utilities\StartDict\StrHeteroIdxTable.cs" />
+    <Compile Include="Utilities\StartDict\TxtHeteroIdxTable.cs" />
+    <Compile Include="Utilities\StringUtil.cs" />
+    <Compile Include="Unihan\UnihanImporter.cs" />
+    <Compile Include="WordFrequency\JiebaAnalysis\JiebaAnalysisFreqImporter.cs" />
+    <Compile Include="WordFrequency\JunDa\JunDaWordFreqImporter.cs" />
+    <Compile Include="WordFrequency\OpenSubtitles\OpenSubtitles2016Importer.cs" />
+    <Compile Include="WordFrequency\SIGHAN2\SigHanWordSegmentationBakeoff2Importer.cs" />
+    <Compile Include="WordFrequency\WordFrequencyImporter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Adso\files\adso.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\OpenSubtitles\files\README.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.config" />
+    <EmbeddedResource Include="CcCedict\cedict_ts.u8" />
+    <EmbeddedResource Include="Hsk\PopupChinese\NewHSKLevel1.xls" />
+    <EmbeddedResource Include="Hsk\PopupChinese\NewHSKLevel2.xls" />
+    <EmbeddedResource Include="Hsk\PopupChinese\NewHSKLevel3.xls" />
+    <EmbeddedResource Include="Hsk\PopupChinese\NewHSKLevel4.xls" />
+    <EmbeddedResource Include="Hsk\PopupChinese\NewHSKLevel5.xls" />
+    <EmbeddedResource Include="Hsk\PopupChinese\NewHSKLevel6.xls" />
+    <Content Include="ExampleSentences\Tatoeba\links.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExampleSentences\Tatoeba\sentences.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="bundleconfig.json" />
+    <Content Include="Hsk\HskHskCom\README.txt" />
+    <Content Include="WordFrequency\SIGHAN2\cache\README.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\as_testing_gold.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\as_training.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\as_training_words.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\cityu_test_gold.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\cityu_training.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\cityu_training_words.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\msr_test_gold.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\msr_training.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\msr_training_words.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\pku_test_gold.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\pku_training.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\files\pku_training_words.utf8">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\OpenSubtitles\files\opensubs.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordFrequency\SIGHAN2\cache\sighan_bakeoff2.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="create.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NtiBuddhistDictionary\words.txt" />
+    <EmbeddedResource Include="Unihan\Unihan_Variants.txt" />
+    <EmbeddedResource Include="Unihan\Unihan_Readings.txt" />
+    <EmbeddedResource Include="WordFrequency\JiebaAnalysis\dict.txt" />
+    <EmbeddedResource Include="WordFrequency\JiebaAnalysis\prob_emit.txt" />
+    <EmbeddedResource Include="finalize.sql" />
+    <EmbeddedResource Include="Hsk\HskHskCom\1.txt" />
+    <EmbeddedResource Include="Hsk\HskHskCom\2.txt" />
+    <EmbeddedResource Include="Hsk\HskHskCom\3.txt" />
+    <EmbeddedResource Include="Hsk\HskHskCom\4.txt" />
+    <EmbeddedResource Include="Hsk\HskHskCom\5.txt" />
+    <EmbeddedResource Include="Hsk\HskHskCom\6.txt" />
+    <Content Include="Hsk\PopupChinese\LICENSE.txt" />
+    <EmbeddedResource Include="WordFrequency\JunDa\CharFreq-Modern.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StartDictDictionaries\Dictionaries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{72e9e36a-34c0-416e-97d0-d57a31aee49a}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.101.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.101.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.101.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.101.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
