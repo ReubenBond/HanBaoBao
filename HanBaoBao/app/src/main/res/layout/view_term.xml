@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:gravity="fill_vertical"
+    tools:background="@drawable/term_bg"
+    android:orientation="vertical"
+    android:id="@+id/termBackground">
+
+    <com.tallogre.hanbaobao.Utilities.SingleLineTextView
+        android:id="@+id/transliteration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/output_text_size"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        tools:text="ertong"/>
+
+    <TextView
+        android:id="@+id/original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/output_text_size"
+        android:textColor="#000000"
+        tools:text="儿童"/>
+</LinearLayout>

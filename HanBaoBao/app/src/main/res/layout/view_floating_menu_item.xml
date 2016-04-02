@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:background="@drawable/overlay_control_bg"
+    android:gravity="center">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:contentDescription="Menu Item"
+        android:padding="16dp"
+        tools:src="@drawable/ic_translator_tool"/>
+</LinearLayout>

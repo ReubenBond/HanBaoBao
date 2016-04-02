@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/widget"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/logoCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-6dp"
+            android:layout_marginBottom="-6dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_floating"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/progress_ring"
+            android:visibility="gone"
+            tools:visibility="visible">
+        </ProgressBar>
+    </FrameLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/infoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="@dimen/info_card_margin_left"
+        android:layout_marginTop="@dimen/info_card_margin_top"
+        android:layout_marginRight="@dimen/info_card_margin_right"
+        android:layout_toRightOf="@id/logoCard"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/background"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="6dp"
+        tools:visibility="visible">
+
+        <com.tallogre.hanbaobao.Utilities.BoundedRelativeLayout
+            android:id="@+id/infoWindow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/info_card_padding">
+
+            <LinearLayout
+                android:paddingTop="@dimen/info_card_vertical_padding_extra"
+                android:paddingBottom="@dimen/info_card_vertical_padding_extra"
+                android:id="@+id/phraseAreaOuter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:orientation="horizontal">
+
+                <com.tallogre.hanbaobao.Utilities.BoundedRelativeLayout
+                    android:id="@+id/outputTextArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/output_bg"
+                    android:gravity="center_vertical"
+                    android:minHeight="48dp"
+                    app:boundedMaxHeight="128dp">
+
+                    <ScrollView
+                        android:layout_below="@+id/phraseInput"
+                        android:id="@+id/phraseViewScroller"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <org.apmem.tools.layouts.FlowLayout
+                            android:id="@+id/phraseView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:gravity="center_vertical|left"
+                            android:orientation="horizontal"
+                            android:minHeight="48dp"
+                            android:padding="4dp"/>
+                    </ScrollView>
+                </com.tallogre.hanbaobao.Utilities.BoundedRelativeLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/dictionaryEntries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phraseAreaOuter"
+                android:layout_marginTop="4dp"/>
+        </com.tallogre.hanbaobao.Utilities.BoundedRelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

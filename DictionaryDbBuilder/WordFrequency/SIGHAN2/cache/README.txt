@@ -1,0 +1,1 @@
+This folder contains a cache of the processed corpus data.

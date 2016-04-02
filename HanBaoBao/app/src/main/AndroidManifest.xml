@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.tallogre.hanbaobao"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" android:required="true" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" android:required="false"/>
+
+    <uses-permission android:name="android.permission.INTERNET" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" android:required="false"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" android:required="false"/>
+    <uses-permission android:name="com.tallogre.hanbaobao.permission.C2D_MESSAGE" android:required="false"/>
+
+    <supports-screens
+    android:smallScreens="true"
+    android:normalScreens="true"
+    android:largeScreens="true"
+    android:xlargeScreens="true"
+    android:requiresSmallestWidthDp="200"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:name=".MainApplication"
+        android:theme="@style/AppTheme.NoDisplay"
+        android:hardwareAccelerated="true">
+        <service
+            android:launchMode="singleInstance"
+            android:name=".BackgroundService"
+            android:exported="false"/>
+        <service
+            android:launchMode="singleInstance"
+            android:name=".ScreenReaderService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service"/>
+        </service>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".AcknowledgementsActivity"
+                  android:theme="@style/AppTheme"
+                  android:launchMode="singleInstance">
+        </activity>
+        <activity android:name=".TutorialActivity"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity android:name=".OverAppActivity"
+            android:label=""
+            android:theme="@style/AppTheme.SlideIn"
+            android:taskAffinity="com.tallogre.hanbaobao.OverAppActivity"
+            android:windowSoftInputMode="adjustPan">
+            <!--android:launchMode="singleInstance"-->
+            </activity>
+    </application>
+
+</manifest>

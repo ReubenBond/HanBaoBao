@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityBackground"
+    android:orientation="vertical"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    tools:context="com.tallogre.hanbaobao.TutorialActivity">
+
+    <ScrollView
+        android:id="@+id/tutorialText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:longClickable="true"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="Welcome! 欢迎光临! ❤"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textIsSelectable="true"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/permissionRequiredCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/warningBackground"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Action Required"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+                        android:textColor="@color/text_color_primary_inverse"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Please permit HànBǎoBāo to draw over other apps. This is required for HànBǎoBāo to function."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/text_color_primary_inverse"/>
+
+                    <Button
+                        android:id="@+id/enableDrawing"
+                        style="@style/Base.Widget.AppCompat.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Enable Permission"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:longClickable="true"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:text="我要一个汉堡包!"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textIsSelectable="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="Long-click on the text above &amp; copy it to see the transliteration &amp; definitions."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="HànBǎoBāo can be used from any app, so it's great for chatting in WeChat or HelloTalk or HelloPal, where you can find thousands of people to help you learn."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="Drag the HànBǎoBāo icon around the screen to reposition it along one of the edges."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="While dragging the icon, you will see the menu where you can hide HànBǎoBāo, translate the current text using the selected translator, or open settings to change your preferences."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="HànBǎoBāo is even better when 'Touch mode' is enabled. Just go into Android's Accessibility Settings to enable it, then you can transliterate on touch to make things even faster."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="Happy Learning!"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/acknowledgements"
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_gravity="center_horizontal"
+                android:text="Acknowledgements"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/enableAccessibility"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Accessibility Settings"/>
+
+        <Button
+            android:id="@+id/done"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/text_color_primary_inverse"
+            android:text="Got it"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "Utilities/StartDict/StarDictIdx.cs",
+    "inputFiles": [
+      "Utilities/StartDict/StarDictIdx.cs"
+    ]
+  },
+  {
+    "outputFileName": "NtiBuddhistDictionary/NtiBuddhistDictionary.cs",
+    "inputFiles": [
+      "NtiBuddhistDictionary/NtiBuddhistDictionary.cs"
+    ]
+  }
+]

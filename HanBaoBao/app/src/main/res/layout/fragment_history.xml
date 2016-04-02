@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="12dp"
+    android:paddingLeft="12dp"
+    android:paddingTop="4dp"
+    tools:background="@color/popoverBackground"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:windowSoftInputMode="adjustPan">
+    <EditText
+        android:id="@+id/phraseInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textAutoComplete"
+        android:windowSoftInputMode="adjustPan"
+        android:drawableLeft="@drawable/ic_search_bar"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/historyEntries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/resultsPlaceholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="No results found."/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_history_color"
+            android:alpha=".7"/>
+
+        <TextView
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Enter a search query."/>
+    </LinearLayout>
+</LinearLayout>

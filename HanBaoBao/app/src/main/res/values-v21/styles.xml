@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#FF4081</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:textColorPrimary">@color/text_color_primary</item>
+        <item name="android:textColorSecondary">@color/text_color_secondary</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:textColorTertiary">@color/text_color_secondary</item>
+        <item name="android:textColorPrimaryInverse">#FFF</item>
+        <item name="android:textColorSecondaryInverse">#FFF</item>
+        <item name="android:navigationBarColor">#000</item>
+        <item name="android:statusBarColor">#000</item>
+    </style>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffd740</color>
+    <color name="colorPrimaryDark">#ffff8800</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="warningBackground">#ef5350</color>
+    <color name="background">#ffee5a</color>
+    <color name="activityBackground">#fff9c4</color>
+    <color name="popoverBackground">#fff176</color>
+    <color name="separator">#ecde54</color>
+    <color name="termBackground">#66ffee5a</color>
+    <color name="termBackgroundHighlighted">#ccffee5a</color>
+    <color name="colorButtonNormal">#ccffee5a</color>
+    <color name="tabBackgroundColor">#D0A334</color>
+
+    <!-- red = first tone, orange = second tone, green = third tone, blue = fourth tone. -->
+    <color name="tone1">#ff1744</color>
+    <color name="tone2">#ffab00</color>
+    <color name="tone3">#4caf50</color>
+    <color name="tone4">#3d5afe</color>
+    <color name="tone5">#616161</color>
+    <color name="statusBarColor">#d84315</color>
+    <color name="tabIndicator">@color/colorAccent</color>
+
+    <color name="secondary_text_default">#8a000000</color>
+    <color name="definitionTextColor">#746D29</color>
+    <color name="notification_text_title">#de000000</color>
+    <color name="notification_text_content">#8a000000</color>
+    <color name="notification_background">@color/background</color>
+    <color name="text_color_primary_inverse">#fff</color>
+    <color name="textColorPrimaryInverse">#fff</color>
+</resources>
