@@ -1,3 +1,5 @@
+![](https://github.com/ReubenBond/HanBaoBao/blob/master/HanBaoBao/assets/Twitter_Header.png)
+
 # HànBǎoBāo
 Mandarin Chinese text segmentation and mobile dictionary Android app (中文分词)
 
