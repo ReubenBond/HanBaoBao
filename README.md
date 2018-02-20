@@ -15,6 +15,7 @@ This repository consists of two parts:
   * **Tap to Read** - tap on text in your chat app to load it into HanBaoBao.
   * **Hide by HSK Level** - optionally hide transliteration for all words below a given HSK level.
   * **Part of Speech Tags** - many words have part-of-speech and ontology tags.
+  * **Translation Tool** - drag the icon into the translation tool to translate the sentence using Microsoft Translator or Google Translate (if installed)
 
 The database building program compiles data from many sources and outputs a SQLite db which is read by the Android app.
 The database is likely useful for creating other apps and services.
