@@ -25,11 +25,11 @@ import com.tallogre.hanbaobao.Utilities.ViewUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FloatingMenu {
-    @Bind(R.id.floatingMenu)
+    @BindView(R.id.floatingMenu)
     public ViewGroup rootView;
     private boolean overlayVisible;
     private ViewPropertyAnimator entranceAnimation;
@@ -40,14 +40,14 @@ public class FloatingMenu {
     private final WindowManager.LayoutParams layoutParams;
     private boolean isFullyVisible;
 
-    public FloatingMenu(LayoutInflater inflater, WindowManager windowManager) {
+    FloatingMenu(LayoutInflater inflater, WindowManager windowManager) {
         this.inflater = inflater;
         this.windowManager = windowManager;
         ButterKnife.bind(this, inflater.inflate(R.layout.view_floating_menu, null, false));
         Rect screenRect = new Rect();
         windowManager.getDefaultDisplay().getRectSize(screenRect);
         layoutParams = new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.TYPE_PHONE,
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : WindowManager.LayoutParams.TYPE_PHONE,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
                         WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
                         WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |

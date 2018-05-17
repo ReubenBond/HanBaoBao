@@ -27,7 +27,8 @@ import com.tallogre.hanbaobao.Adapters.TabViewPagerAdapter;
 import com.tallogre.hanbaobao.Utilities.Globals;
 import com.tallogre.hanbaobao.Utilities.ViewUtil;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -41,10 +42,10 @@ public class OverAppActivity extends AppCompatActivity {
     private BackgroundService backgroundService;
     private ServiceConnection serviceConnection;
 
-    @Bind(R.id.viewPager)
+    @BindView(R.id.viewPager)
     ViewPager viewPager;
 
-    @Bind(R.id.tabs)
+    @BindView(R.id.tabs)
     TabLayout tabLayout;
     private SoftKeyboardTouchEventDispatcher touchEventDispatcher;
     private TabViewPagerAdapter tabViewPagerAdapter;

@@ -19,7 +19,7 @@ import com.tallogre.hanbaobao.Utilities.Globals;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -30,13 +30,13 @@ import rx.subjects.PublishSubject;
 public class HistoryFragment extends Fragment {
     final PublishSubject<CharSequence> query = PublishSubject.create();
 
-    @Bind(R.id.phraseInput)
+    @BindView(R.id.phraseInput)
     TextView phraseInput;
 
-    @Bind(R.id.historyEntries)
+    @BindView(R.id.historyEntries)
     RecyclerView historyView;
 
-    @Bind(R.id.resultsPlaceholder)
+    @BindView(R.id.resultsPlaceholder)
     View resultsPlaceholder;
 
     private UserDatabase userDb;
@@ -135,7 +135,7 @@ public class HistoryFragment extends Fragment {
 
     public static class HistoryEntryViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.phrase)
+        @BindView(R.id.phrase)
         TextView phrase;
 
         public HistoryEntryViewHolder(View itemView) {

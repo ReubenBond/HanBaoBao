@@ -1,7 +1,5 @@
 package com.tallogre.hanbaobao.Adapters;
 
-import android.content.res.Resources;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,15 +8,15 @@ import com.tallogre.hanbaobao.R;
 import com.tallogre.hanbaobao.Utilities.Globals;
 import com.tallogre.hanbaobao.Utilities.UserPreferences;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TermViewHolder {
-    @Bind(R.id.transliteration)
+    @BindView(R.id.transliteration)
     public TextView transliterated;
-    @Bind(R.id.original)
+    @BindView(R.id.original)
     public TextView original;
-    @Bind(R.id.termBackground)
+    @BindView(R.id.termBackground)
     public View termBackground;
     private Term term;
     private int index;

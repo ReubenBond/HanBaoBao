@@ -14,8 +14,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import butterknife.Bind;
+;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -28,7 +28,7 @@ public class AcknowledgementsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Bind(R.id.acknowledgements)
+    @BindView(R.id.acknowledgements)
     TextView acknowledgements;
 
     @Override

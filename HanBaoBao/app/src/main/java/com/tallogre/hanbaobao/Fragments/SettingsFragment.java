@@ -29,7 +29,7 @@ import com.tallogre.hanbaobao.Utilities.UserPreferences;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
@@ -42,21 +42,21 @@ public class SettingsFragment extends Fragment implements UserPreferences.OnChan
 
     private ArrayList<CharacterSet> charSets;
 
-    @Bind(R.id.clipboardModeOption)
+    @BindView(R.id.clipboardModeOption)
     public CheckBox clipboardModeOption;
-    @Bind(R.id.touchModeOption)
+    @BindView(R.id.touchModeOption)
     public CheckBox touchModeOption;
-    @Bind(R.id.autoShowOption)
+    @BindView(R.id.autoShowOption)
     public CheckBox autoShowOption;
-    @Bind(R.id.externalTranslatorSpinner)
+    @BindView(R.id.externalTranslatorSpinner)
     public Spinner externalTranslatorSpinner;
-    @Bind(R.id.hskLevelSpinner)
+    @BindView(R.id.hskLevelSpinner)
     public Spinner hskLevelSpinner;
 
-    @Bind(R.id.charSetSpinner)
+    @BindView(R.id.charSetSpinner)
     public Spinner charSetSpinner;
 
-    @Bind(R.id.lookupSymbol)
+    @BindView(R.id.lookupSymbol)
     public EditText lookupSymbol;
 
     private ExternalTranslators externalTranslators;
@@ -216,9 +216,9 @@ public class SettingsFragment extends Fragment implements UserPreferences.OnChan
 
         public class ViewHolder {
             private final View view;
-            @Bind(R.id.icon)
+            @BindView(R.id.icon)
             public ImageView icon;
-            @Bind(R.id.name)
+            @BindView(R.id.name)
             public TextView name;
 
             public ViewHolder(View view) {
@@ -272,7 +272,7 @@ public class SettingsFragment extends Fragment implements UserPreferences.OnChan
         }
 
         public class ViewHolder {
-            @Bind(R.id.label)
+            @BindView(R.id.label)
             public TextView label;
 
             public ViewHolder(View view) {
@@ -324,7 +324,7 @@ public class SettingsFragment extends Fragment implements UserPreferences.OnChan
         }
 
         public class ViewHolder {
-            @Bind(R.id.label)
+            @BindView(R.id.label)
             public TextView label;
 
             public ViewHolder(View view) {

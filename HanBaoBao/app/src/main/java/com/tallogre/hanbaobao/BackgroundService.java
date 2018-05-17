@@ -1,6 +1,7 @@
 package com.tallogre.hanbaobao;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -8,17 +9,17 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import android.view.KeyEvent;
 import android.widget.RemoteViews;
 
 import com.tallogre.hanbaobao.Utilities.CharacterUtil;
 
-import rx.Observable;
-
 public class BackgroundService extends Service {
-    private static final String TAG = "BackgroundService";
+    private static final String CHANNEL_ID = "com.tallogre.hanbaobao.status";
+    public static final CharSequence CHANNEL_NAME = "HànBǎoBāo Status";
     private static final int NOTIFICATION_ID = 38389001;
     public static final String ACTION_BACKGROUND = "background";
     public static final String ACTION_STOP = "stop";
@@ -35,7 +36,10 @@ public class BackgroundService extends Service {
             widget.hide();
             stopForeground(true);
             NotificationManager notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-            notificationManager.cancel(NOTIFICATION_ID);
+            if (notificationManager != null) {
+                notificationManager.cancel(NOTIFICATION_ID);
+            }
+
             Intent broadcastIntent = new Intent();
             broadcastIntent.setAction(BackgroundService.ACTION_STOP);
             sendBroadcast(broadcastIntent);
@@ -76,7 +80,9 @@ public class BackgroundService extends Service {
         }
 
         NotificationManager notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.notify(NOTIFICATION_ID, createNotification());
+        if (notificationManager != null) {
+            notificationManager.notify(NOTIFICATION_ID, createNotification());
+        }
     }
 
     private void destroy() {
@@ -84,7 +90,22 @@ public class BackgroundService extends Service {
     }
 
     private Notification createNotification() {
-        final NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        NotificationManager notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        if (notificationManager != null) {
+            NotificationChannel notificationChannel;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_NONE);
+                notificationChannel.enableLights(false);
+                notificationChannel.enableVibration(false);
+                notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
+                notificationChannel.setShowBadge(false);
+
+                NotificationChannel channel = notificationChannel;
+                notificationManager.createNotificationChannel(channel);
+            }
+        }
+
+        final NotificationCompat.Builder builder = new NotificationCompat.Builder(this, BackgroundService.CHANNEL_ID);
         builder.setWhen(System.currentTimeMillis());
         builder.setSmallIcon(R.drawable.ic_notification);
         builder.setContentTitle(getString(R.string.app_name));
@@ -95,7 +116,13 @@ public class BackgroundService extends Service {
         builder.setLocalOnly(true);
         builder.setPriority(NotificationCompat.PRIORITY_MIN);
         builder.setCategory(NotificationCompat.CATEGORY_SERVICE);
-        builder.setContent(createNotificationContent());
+
+        RemoteViews result = new RemoteViews(getPackageName(), R.layout.notification);
+        PendingIntent deleteIntent = PendingIntent.getService(this, 0, getExitIntent(), 0);
+        result.setOnClickPendingIntent(R.id.close, deleteIntent);
+
+        //builder.setCustomHeadsUpContentView(result);
+        builder.setContent(result);
 
         final Intent notifyIntent = new Intent(this, MainActivity.class);
         PendingIntent notifyPendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -108,13 +135,6 @@ public class BackgroundService extends Service {
         Intent stopIntent = new Intent(this, BackgroundService.class);
         stopIntent.setAction(ACTION_STOP);
         return stopIntent;
-    }
-
-    private RemoteViews createNotificationContent() {
-        RemoteViews result = new RemoteViews(getPackageName(), R.layout.notification);
-        PendingIntent deleteIntent = PendingIntent.getService(this, 0, getExitIntent(), 0);
-        result.setOnClickPendingIntent(R.id.close, deleteIntent);
-        return result;
     }
 
     public void show() {

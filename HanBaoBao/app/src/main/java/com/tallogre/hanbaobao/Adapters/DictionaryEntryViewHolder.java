@@ -17,7 +17,7 @@ import com.tallogre.hanbaobao.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DictionaryEntryViewHolder extends RecyclerView.ViewHolder {
@@ -53,19 +53,19 @@ public class DictionaryEntryViewHolder extends RecyclerView.ViewHolder {
         return result;
     }
 
-    @Bind(R.id.definition)
+    @BindView(R.id.definition)
     public TextView definition;
 
-    @Bind(R.id.transliteration)
+    @BindView(R.id.transliteration)
     public TextView transliteration;
 
-    @Bind(R.id.original)
+    @BindView(R.id.original)
     public TextView original;
 
-    @Bind(R.id.tags)
+    @BindView(R.id.tags)
     public ViewGroup tags;
 
-    @Bind(R.id.replace)
+    @BindView(R.id.replace)
     public ImageView replace;
 
     public DictionaryEntryViewHolder(View itemView, boolean textIsSelectable, LayoutInflater inflater, boolean selectMode) {
