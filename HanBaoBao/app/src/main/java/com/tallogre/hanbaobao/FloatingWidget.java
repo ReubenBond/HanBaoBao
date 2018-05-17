@@ -49,7 +49,7 @@ import com.tallogre.hanbaobao.Utilities.ViewUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
@@ -102,29 +102,29 @@ public class FloatingWidget
     public View rootView;
     private CharSequence lastInputText;
 
-    @Bind(R.id.infoCard)
+    @BindView(R.id.infoCard)
     public View infoCard;
 
-    @Bind(R.id.logoCard)
+    @BindView(R.id.logoCard)
     public View logoCard;
 
-    @Bind(R.id.outputTextArea)
+    @BindView(R.id.outputTextArea)
     public View outputTextArea;
 
-    @Bind(R.id.logoButton)
+    @BindView(R.id.logoButton)
     public ImageView logoButton;
 
-    @Bind(R.id.dictionaryEntries)
+    @BindView(R.id.dictionaryEntries)
     public View dictionaryEntriesView;
     private final DictionaryEntriesControl dictionaryEntriesControl;
 
-    @Bind(R.id.phraseView)
+    @BindView(R.id.phraseView)
     public ViewGroup phraseView;
 
-    @Bind(R.id.infoWindow)
+    @BindView(R.id.infoWindow)
     public BoundedRelativeLayout infoWindow;
 
-    @Bind(R.id.progressBar)
+    @BindView(R.id.progressBar)
     public ProgressBar progressBar;
 
     private boolean shown;
@@ -179,7 +179,7 @@ public class FloatingWidget
 
         layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 ? WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY : WindowManager.LayoutParams.TYPE_PRIORITY_PHONE,
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : WindowManager.LayoutParams.TYPE_PRIORITY_PHONE,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
                         WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
                         WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |

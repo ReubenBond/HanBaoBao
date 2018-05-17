@@ -10,4 +10,7 @@
     <string name="movies_categories_key">categoriesKey</string>
     <string name="default_movies_categories">popular</string>
     <string name="writing_assistant_description">Type the symbol below into any text field to start a quick lookup! For example, if the symbol is #, try typing \'# hamburger\'. Note that HànBǎoBāo must be enabled in Accessibility Settings for this feature to work.</string>
+    <string name="notification_subtext">Active and ready to help</string>
+    <string name="close_hanbaobao">Close HanBaoBao</string>
+    <string name="icon">Icon</string>
 </resources>

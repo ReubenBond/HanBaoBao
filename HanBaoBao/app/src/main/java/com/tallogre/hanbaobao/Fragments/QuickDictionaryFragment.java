@@ -20,7 +20,7 @@ import com.tallogre.hanbaobao.Utilities.Globals;
 
 import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -32,10 +32,10 @@ import rx.subjects.PublishSubject;
 public class QuickDictionaryFragment extends Fragment {
     final PublishSubject<CharSequence> query = PublishSubject.create();
 
-    @Bind(R.id.phraseInput)
+    @BindView(R.id.phraseInput)
     TextView phraseInput;
 
-    @Bind(R.id.resultsPlaceholder)
+    @BindView(R.id.resultsPlaceholder)
     View resultsPlaceholder;
 
     DictionaryEntriesControl dictionaryEntriesControl;

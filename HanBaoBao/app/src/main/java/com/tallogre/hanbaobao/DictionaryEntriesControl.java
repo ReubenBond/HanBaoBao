@@ -14,7 +14,7 @@ import com.tallogre.hanbaobao.Models.Term;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.Observable;
 import rx.subjects.PublishSubject;
@@ -23,7 +23,7 @@ public class DictionaryEntriesControl implements View.OnClickListener {
     private final boolean textIsSelectable;
     private PublishSubject<DictionaryEntryViewHolder> onEntryClicked = PublishSubject.create();
 
-    @Bind(R.id.dictionaryEntries)
+    @BindView(R.id.dictionaryEntries)
     public RecyclerView definitionsList;
 
         private LayoutInflater inflater;

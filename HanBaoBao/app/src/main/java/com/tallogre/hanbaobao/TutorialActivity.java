@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.tallogre.hanbaobao.Utilities.Globals;
 import com.tallogre.hanbaobao.Utilities.UserPreferences;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -33,7 +33,7 @@ public class TutorialActivity extends AppCompatActivity {
     private BackgroundService backgroundService;
     private ServiceConnection serviceConnection;
     private Boolean isServiceBound = false;
-    @Bind(R.id.permissionRequiredCard)
+    @BindView(R.id.permissionRequiredCard)
     public View permissionRequiredCard;
 
     @OnClick(R.id.done)
