@@ -94,7 +94,7 @@ public class BackgroundService extends Service {
         if (notificationManager != null) {
             NotificationChannel notificationChannel;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_NONE);
+                notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_LOW);
                 notificationChannel.enableLights(false);
                 notificationChannel.enableVibration(false);
                 notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
