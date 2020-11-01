@@ -68,14 +68,14 @@
             android:layout_marginBottom="4dp"
             android:text="Input Mode" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/clipboardModeOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="8dp"
             android:text="Clipboard" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/touchModeOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
             android:text="Display Options"
             android:textColor="@color/text_color_primary" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/autoShowOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

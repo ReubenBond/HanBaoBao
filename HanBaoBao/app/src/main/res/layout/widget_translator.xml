@@ -34,7 +34,7 @@
         </ProgressBar>
     </FrameLayout>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/infoCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -94,12 +94,12 @@
                 </com.tallogre.hanbaobao.Utilities.BoundedRelativeLayout>
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dictionaryEntries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/phraseAreaOuter"
                 android:layout_marginTop="4dp"/>
         </com.tallogre.hanbaobao.Utilities.BoundedRelativeLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

@@ -1,7 +1,7 @@
 package com.tallogre.hanbaobao.Models;
 
 import android.database.Cursor;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.SpannableStringBuilder;
 
 import com.tallogre.hanbaobao.Fragments.SettingsFragment;

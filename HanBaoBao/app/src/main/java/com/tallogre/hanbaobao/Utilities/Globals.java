@@ -2,7 +2,7 @@ package com.tallogre.hanbaobao.Utilities;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 import com.tallogre.hanbaobao.Database.DictionaryDatabase;
 import com.tallogre.hanbaobao.Database.UserDatabase;
