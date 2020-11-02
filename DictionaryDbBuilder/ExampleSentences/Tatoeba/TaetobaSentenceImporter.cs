@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Data.SQLite;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
 
@@ -29,8 +30,8 @@
                         typeof(TatoebaSentenceImporter).Namespace.Split('.').Skip(1)).ToArray());
 
             var translations = new Dictionary<int, int>(500000);
-            using (var file = File.OpenText(Path.Combine(folder, "links.csv")))
-            using (var csv = new CsvReader(file) { Configuration = { Delimiter = "\t" } })
+            using (var file = new StreamReader(Path.Combine(folder, "links.csv")))
+            using (var csv = new CsvReader(file, CultureInfo.InvariantCulture) { Configuration = { Delimiter = "\t" } })
             {
                 /* var insert = new SQLiteCommand("insert into sentence_links (original, translated) values (@original, @translated)", connection, transaction);
                      insert.Prepare();*/
@@ -46,8 +47,8 @@
                 }
             }
 
-            using (var file = File.OpenText(Path.Combine(folder, "sentences.csv")))
-            using (var csv = new CsvReader(file) { Configuration = { Delimiter = "\t" } })
+            using (var file = new StreamReader(Path.Combine(folder, "sentences.csv")))
+            using (var csv = new CsvReader(file, CultureInfo.InvariantCulture) { Configuration = { Delimiter = "\t" } })
             using (
                 var insert =
                     new SQLiteCommand(

@@ -15,6 +15,7 @@ import com.tallogre.hanbaobao.Utilities.Globals;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+    public static final String TEXT_EXTRA = "Text";
     private final BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private BackgroundService backgroundService;
     private ServiceConnection serviceConnection;
     private boolean shouldUnbindServiceOnDestroy;
+    private CharSequence pendingText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
             public void onServiceConnected(ComponentName name, IBinder service) {
                 shouldUnbindServiceOnDestroy = true;
                 backgroundService = ((BackgroundService.ServiceBinder) service).getService();
+                if (pendingText != null) {
+                    backgroundService.onAccessibilityEventText(pendingText);
+                    pendingText = null;
+                }
             }
 
             @Override
@@ -45,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(BackgroundService.ACTION_STOP);
         registerReceiver(receiver, intentFilter);
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            handleIntent(intent);
+        }
+    }
+
+    private void handleIntent(Intent intent) {
+        pendingText = intent.getCharSequenceExtra(TEXT_EXTRA);
     }
 
     @Override

@@ -228,7 +228,7 @@ public class SettingsFragment extends Fragment implements UserPreferences.OnChan
 
             public void apply(ExternalTranslators.ExternalTranslator item) {
                 if (item.icon != 0) {
-                    Picasso.with(view.getContext()).load(item.icon).into(icon);
+                    Picasso.get().load(item.icon).into(icon);
                     icon.setVisibility(View.VISIBLE);
                 } else icon.setVisibility(View.INVISIBLE);
                 name.setText(item.name);

@@ -194,7 +194,7 @@ public class FloatingMenu {
         }
 
         public void onBindView() {
-            Picasso.with(view.getContext()).load(iconResourceId).into(iconView);
+            Picasso.get().load(iconResourceId).into(iconView);
         }
 
         private View view;

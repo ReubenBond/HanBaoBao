@@ -5,12 +5,20 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" android:required="true" />
     <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" android:required="false"/>
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" android:required="false"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" android:required="false"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" android:required="false"/>
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" android:required="false"/>
     <uses-permission android:name="com.tallogre.hanbaobao.permission.C2D_MESSAGE" android:required="false"/>
+
+    <queries>
+        <package android:name="com.google.android.apps.translate" />
+        <package android:name="com.microsoft.translator" />
+        <package android:name="com.pleco.chinesesystem" />
+    </queries>
 
     <supports-screens
     android:smallScreens="true"
@@ -68,7 +76,16 @@
             android:taskAffinity="com.tallogre.hanbaobao.OverAppActivity"
             android:windowSoftInputMode="adjustPan">
             <!--android:launchMode="singleInstance"-->
-            </activity>
+        </activity>
+        <activity
+            android:name=".ProcessTextActivity"
+            android:label="@string/process_text_action_name">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

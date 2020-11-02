@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">HànBǎoBāo</string>
-    <string name="translateButtonDescription">Send to Google Translate</string>
     <string name="translatorHintText">Copy some text to begin</string>
     <string name="author">Reuben Bond &lt;reuben.bond@gmail.com&gt;</string>
     <string name="touch_mode_help">HànBǎoBāo must be enabled in Accessibility Settings for Tap mode to work.</string>
-    <string name="accessibilityServiceDescription">Enable quick, on-touch access from any app.</string>
+    <string name="accessibilityServiceDescription">Enable quick, on-touch access from any app. This allows the app to see anything on your screen. HanBaoBao uses this to quickly transliterate Chinese text. Only enable this if you trust this application.</string>
     <string name="acknowledgementsTitle">Acknowledgements</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="movies_categories_key">categoriesKey</string>
@@ -13,4 +12,6 @@
     <string name="notification_subtext">Active and ready to help</string>
     <string name="close_hanbaobao">Close HanBaoBao</string>
     <string name="icon">Icon</string>
+    <string name="process_text_action_name">Transliterate</string>
+    <string name="accessibilityServiceSummary">Allows the app to see any text on your screen</string>
 </resources>

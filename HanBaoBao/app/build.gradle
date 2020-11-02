@@ -8,8 +8,8 @@ android {
         applicationId "com.tallogre.hanbaobao"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 22
-        versionName "r22"
+        versionCode 25
+        versionName "r25"
     }
     buildTypes {
         release {

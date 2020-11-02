@@ -24,7 +24,11 @@ CREATE TABLE sentence (
 	trans_of INTEGER
 );
 
-CREATE INDEX sentence_trans_of on sentence(trans_of);", connection, transaction)) cmd.ExecuteNonQuery();
+CREATE INDEX sentence_trans_of on sentence(trans_of);", connection, transaction))
+            {
+                cmd.ExecuteNonQuery();
+            }
+
             return 0;
         }
     }

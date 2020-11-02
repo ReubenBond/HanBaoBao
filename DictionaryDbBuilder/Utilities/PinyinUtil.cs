@@ -488,7 +488,11 @@
         /// <returns>The probable pinyin for the sequence of characters provided.</returns>
         public static string GetProbablePinyin(SQLiteConnection connection, SQLiteTransaction transaction, string chars)
         {
-            if (string.IsNullOrWhiteSpace(chars)) return null;
+            if (string.IsNullOrWhiteSpace(chars))
+            {
+                return null;
+            }
+
             var result = new StringBuilder();
             for (var i = 0; i < chars.Length; i++)
             {
